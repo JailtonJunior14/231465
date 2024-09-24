@@ -82,7 +82,7 @@
             // 
             // txtUF
             // 
-            this.txtUF.Location = new System.Drawing.Point(809, 89);
+            this.txtUF.Location = new System.Drawing.Point(822, 89);
             this.txtUF.Name = "txtUF";
             this.txtUF.Size = new System.Drawing.Size(100, 20);
             this.txtUF.TabIndex = 4;
