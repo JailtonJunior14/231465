@@ -57,6 +57,7 @@
             this.cIdadesToolStripMenuItem.Name = "cIdadesToolStripMenuItem";
             this.cIdadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cIdadesToolStripMenuItem.Text = "CIdades";
+            this.cIdadesToolStripMenuItem.Click += new System.EventHandler(this.cIdadesToolStripMenuItem_Click);
             // 
             // FrmMenu
             // 
@@ -67,7 +68,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmMenu";
             this.Text = "Menu do Sistema";
-
+            this.Load += new System.EventHandler(this.FrmMenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

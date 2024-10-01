@@ -117,6 +117,7 @@
             this.dgvCidades.Name = "dgvCidades";
             this.dgvCidades.Size = new System.Drawing.Size(1136, 267);
             this.dgvCidades.TabIndex = 8;
+            this.dgvCidades.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCidades_CellClick);
             // 
             // btnIncluir
             // 
@@ -126,6 +127,7 @@
             this.btnIncluir.TabIndex = 9;
             this.btnIncluir.Text = "Incluir";
             this.btnIncluir.UseVisualStyleBackColor = true;
+            this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click);
             // 
             // btnAlterar
             // 
@@ -135,6 +137,7 @@
             this.btnAlterar.TabIndex = 10;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnCancelar
             // 
@@ -144,6 +147,7 @@
             this.btnCancelar.TabIndex = 11;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnExcluir
             // 
@@ -153,6 +157,7 @@
             this.btnExcluir.TabIndex = 12;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnFechar
             // 
@@ -162,6 +167,7 @@
             this.btnFechar.TabIndex = 13;
             this.btnFechar.Text = "Fechar";
             this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // btnPesquisa
             // 
@@ -171,6 +177,7 @@
             this.btnPesquisa.TabIndex = 14;
             this.btnPesquisa.Text = "Pesquisar";
             this.btnPesquisa.UseVisualStyleBackColor = true;
+            this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
             // 
             // FrmCidades
             // 
@@ -196,6 +203,7 @@
             this.Name = "FrmCidades";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Cidades";
+            this.Load += new System.EventHandler(this.FrmCidades_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCidades)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
