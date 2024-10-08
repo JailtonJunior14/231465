@@ -66,7 +66,7 @@ namespace _231465.Views
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            if (txtID .Text == string.Empty) return;
+            if (txtID .Text == String.Empty) return;
 
             c = new Cidade()
             {
