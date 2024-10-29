@@ -24,6 +24,7 @@ namespace _231465.Views
             txtID.Clear();
             txtNome.Clear();
             txtPesquisa.Clear();
+            txtUF.Clear();
         }
         void carregarGrid(string pesquisa)
         {

@@ -70,6 +70,10 @@ namespace _231465
                                             "(id integer auto_increment primary key, " +
                                             "marca char(20))", Conexao);
                 Comando.ExecuteNonQuery();
+                Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Categorias " +
+                                            "(id integer auto_increment primary key, " +
+                                            "categoria char(20))", Conexao);
+                Comando.ExecuteNonQuery();
 
                 //chama a funcao para fechar a conexao com o banco
                 FecharConexao();

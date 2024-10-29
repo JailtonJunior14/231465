@@ -67,11 +67,11 @@ namespace _231465.Views
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            if (txtID.Text == String.Empty) return;
+            if (txttID.Text == String.Empty) return;
 
             m = new Marca()
             {
-                id = int.Parse(txtID.Text),
+                id = int.Parse(txttID.Text),
                 marca = txtMarca.Text
             };
             m.Alterar();
@@ -90,13 +90,13 @@ namespace _231465.Views
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            if (txtID.Text == "") return;
+            if (txttID.Text == "") return;
 
             if (MessageBox.Show("Deseja excluir a Marca?", "Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 m = new Marca()
                 {
-                    id = int.Parse(txtID.Text)
+                    id = int.Parse(txttID.Text)
                 };
                 m.Excluir();
 
