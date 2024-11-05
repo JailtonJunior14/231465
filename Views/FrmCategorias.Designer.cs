@@ -180,7 +180,7 @@
             this.Controls.Add(this.txtCons);
             this.Controls.Add(this.txtID);
             this.Name = "FrmCategorias";
-            this.Text = "Cancelar";
+            this.Text = "Categoria";
             this.Load += new System.EventHandler(this.FrmCategorias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).EndInit();
             this.ResumeLayout(false);
