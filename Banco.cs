@@ -75,14 +75,26 @@ namespace _231465
                                             "categoria char(20))", Conexao);
                 Comando.ExecuteNonQuery();
 
-                Comando = new MySqlCommand("CERATE TABLE IF NOT EXISTS Clientes" +
+                Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Clientes " +
                                             "(id integer auto_increment primary key," +
                                             "idCidade integer," +
+                                            "nome char(40)," +
                                             "dataNasc date," +
                                             "renda decimal(10,2)," +
                                             "cpf char(14)," +
                                             "foto varchar(100)," +
                                             "venda boolean)", Conexao);
+                Comando.ExecuteNonQuery();
+
+                Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Produtos " +
+                                        "(Id integer auto_increment primary key, " +
+                                        "descricao char(40)," +
+                                        "idCategoria integer," +
+                                        "idMarca integer, " +
+                                        "estoquee decimal(10,3), " +
+                                        "valorVenda decimal(10, 2), " +
+                                        "foto varchar(100))", Conexao);
+                Comando.ExecuteNonQuery();
 
                 //chama a funcao para fechar a conexao com o banco
                 FecharConexao();
