@@ -91,7 +91,7 @@ namespace _231465
                                         "descricao char(40)," +
                                         "idCategoria integer," +
                                         "idMarca integer, " +
-                                        "estoquee decimal(10,3), " +
+                                        "estoque decimal(10,3), " +
                                         "valorVenda decimal(10, 2), " +
                                         "foto varchar(100))", Conexao);
                 Comando.ExecuteNonQuery();

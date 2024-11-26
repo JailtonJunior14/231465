@@ -19,7 +19,6 @@ namespace _231465.Views
         {
             InitializeComponent();
         }
-
         void limpacontroles()
         {
             txtID.Clear();

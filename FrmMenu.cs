@@ -46,6 +46,12 @@ namespace _231465
             FrmClientes form = new FrmClientes();
             form.Show();
         }
+
+        private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmProduto form = new FrmProduto();
+            form.Show();
+        }
     }
 
 }
