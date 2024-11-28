@@ -46,12 +46,11 @@ namespace _231465.Views
             p = new Produto()
             {
                 desc = txtDesc.Text,
-                idCategoria = (int)cbocate.SelectedValue,
-                idMarca = (int)cbomar.SelectedValue,
+                idCategoria = (int)cbocate.SelectedValue,  // Usando SelectedValue para pegar o ID da Categoria
+                idMarca = (int)cbomar.SelectedValue,  // Usando SelectedValue para pegar o ID da Marca
                 venda = double.Parse(txtVenda.Text),
                 estoque = double.Parse(txtEstoque.Text),
-                foto = picPro.ImageLocation,
-
+                foto = picPro.ImageLocation
             };
             p.incluir();
 
@@ -67,13 +66,11 @@ namespace _231465.Views
             {
                 id = int.Parse(txtID.Text),
                 desc = txtDesc.Text,
-                idCategoria = (int)cbocate.SelectedValue,
-                idMarca = (int)cbomar.SelectedValue,
+                idCategoria = (int)cbocate.SelectedValue,  // Pegando o ID da Categoria
+                idMarca = (int)cbomar.SelectedValue,  // Pegando o ID da Marca
                 venda = double.Parse(txtVenda.Text),
                 estoque = double.Parse(txtEstoque.Text),
                 foto = picPro.ImageLocation
-
-
             };
             p.Alterar();
 
@@ -124,6 +121,12 @@ namespace _231465.Views
                 DataRowView reg = (DataRowView)cbocate.SelectedItem;
                 txtID.Text = reg["id"].ToString();
             }
+            if (cbocate.SelectedItem != null)
+            {
+                DataRowView reg = (DataRowView)cbocate.SelectedItem;
+                txtID.Text = reg["id"].ToString();
+            }
+
         }
 
         private void cbomar_SelectedIndexChanged(object sender, EventArgs e)
@@ -147,10 +150,14 @@ namespace _231465.Views
         {
             if (dgvProdutos.Rows.Count > 0)
             {
+                // Atribui as informações da linha da grid para os controles do formulário
                 txtID.Text = dgvProdutos.CurrentRow.Cells["id"].Value.ToString();
                 txtDesc.Text = dgvProdutos.CurrentRow.Cells["descricao"].Value.ToString();
-                cbocate.Text = dgvProdutos.CurrentRow.Cells["categoria"].Value.ToString();
-                cbomar.Text = dgvProdutos.CurrentRow.Cells["marca"].Value.ToString();
+
+                // Aqui, ao invés de setar o texto, definimos o valor do ComboBox com o ID
+                cbocate.SelectedValue = dgvProdutos.CurrentRow.Cells["idCategoria"].Value; // Atribui o ID de Categoria
+                cbomar.SelectedValue = dgvProdutos.CurrentRow.Cells["idMarca"].Value; // Atribui o ID de Marca
+
                 txtEstoque.Text = dgvProdutos.CurrentRow.Cells["estoque"].Value.ToString();
                 txtVenda.Text = dgvProdutos.CurrentRow.Cells["valorVenda"].Value.ToString();
                 picPro.ImageLocation = dgvProdutos.CurrentRow.Cells["foto"].Value.ToString();
@@ -161,19 +168,20 @@ namespace _231465.Views
         {
             cat = new Categoria();
             cbocate.DataSource = cat.Consultar();
-            cbocate.DisplayMember = "categoria";
-            cbocate.ValueMember = "id";
+            cbocate.DisplayMember = "categoria";  // Nome que aparecerá no ComboBox
+            cbocate.ValueMember = "id";  // Valor que será enviado, o ID da categoria
 
             m = new Marca();
             cbomar.DataSource = m.Consultar();
-            cbomar.DisplayMember = "marca";
-            cbomar.ValueMember = "id";
+            cbomar.DisplayMember = "marca";  // Nome que aparecerá no ComboBox
+            cbomar.ValueMember = "id";  // Valor que será enviado, o ID da marca
 
             limpacontroles();
             carregarGrid("");
 
-            dgvProdutos.Columns["idmarca"].Visible = false;
-            dgvProdutos.Columns["idcategoria"].Visible = false;
+            // Esconde as colunas que não são necessárias exibir
+            dgvProdutos.Columns["idMarca"].Visible = false;
+            dgvProdutos.Columns["idCategoria"].Visible = false;
             dgvProdutos.Columns["foto"].Visible = false;
         }
     }
