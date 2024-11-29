@@ -119,12 +119,7 @@ namespace _231465.Views
             if (cbocate.SelectedIndex != -1)
             {
                 DataRowView reg = (DataRowView)cbocate.SelectedItem;
-                txtID.Text = reg["id"].ToString();
-            }
-            if (cbocate.SelectedItem != null)
-            {
-                DataRowView reg = (DataRowView)cbocate.SelectedItem;
-                txtID.Text = reg["id"].ToString();
+                
             }
 
         }
@@ -134,7 +129,7 @@ namespace _231465.Views
             if (cbomar.SelectedIndex != -1)
             {
                 DataRowView reg = (DataRowView)cbomar.SelectedItem;
-                txtID.Text = reg["id"].ToString();
+                
             }
         }
 
