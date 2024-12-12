@@ -24,7 +24,7 @@ namespace _231465
         public static void AbrirConexao()
         {
             try{
-                Conexao = new MySqlConnection("server=localhost;port=3307;uid=root;pwd=etecjau");
+                Conexao = new MySqlConnection("server=localhost;port=3306;uid=root;pwd=1234");
                 
                 //Abre a conexao com o banco de dados
                 Conexao.Open();
@@ -90,7 +90,7 @@ namespace _231465
                                         "(Id integer auto_increment primary key, " +
                                         "descricao char(40)," +
                                         "idCategoria integer," +
-                                        "idMarca integer, " +
+                                        "idMarca integer," +
                                         "estoque decimal(10,3), " +
                                         "valorVenda decimal(10, 2), " +
                                         "foto varchar(100))", Conexao);
